@@ -1,0 +1,9 @@
+C:\Users\pfp\source\repos\ErrandBus\SandBus\obj\Debug\netstandard2.0\SandBus.csprojResolveAssemblyReference.cache
+C:\Users\pfp\source\repos\ErrandBus\SandBus\obj\Debug\netstandard2.0\SandBus.csproj.CoreCompileInputs.cache
+C:\Users\pfp\source\repos\ErrandBus\SandBus\obj\Debug\netstandard2.0\SandBus.AssemblyInfoInputs.cache
+C:\Users\pfp\source\repos\ErrandBus\SandBus\obj\Debug\netstandard2.0\SandBus.AssemblyInfo.cs
+C:\Users\pfp\source\repos\ErrandBus\SandBus\bin\Debug\netstandard2.0\SandBus.deps.json
+C:\Users\pfp\source\repos\ErrandBus\SandBus\bin\Debug\netstandard2.0\SandBus.dll
+C:\Users\pfp\source\repos\ErrandBus\SandBus\bin\Debug\netstandard2.0\SandBus.pdb
+C:\Users\pfp\source\repos\ErrandBus\SandBus\obj\Debug\netstandard2.0\SandBus.dll
+C:\Users\pfp\source\repos\ErrandBus\SandBus\obj\Debug\netstandard2.0\SandBus.pdb
