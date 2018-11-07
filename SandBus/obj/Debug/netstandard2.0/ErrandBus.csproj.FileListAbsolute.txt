@@ -1,6 +1,0 @@
-c:\users\pfp\source\repos\ErrandBus\ErrandBus\bin\Debug\netstandard2.0\ErrandBus.deps.json
-c:\users\pfp\source\repos\ErrandBus\ErrandBus\bin\Debug\netstandard2.0\ErrandBus.dll
-c:\users\pfp\source\repos\ErrandBus\ErrandBus\obj\Debug\netstandard2.0\ErrandBus.csprojResolveAssemblyReference.cache
-c:\users\pfp\source\repos\ErrandBus\ErrandBus\obj\Debug\netstandard2.0\ErrandBus.csproj.CoreCompileInputs.cache
-c:\users\pfp\source\repos\ErrandBus\ErrandBus\obj\Debug\netstandard2.0\ErrandBus.AssemblyInfoInputs.cache
-c:\users\pfp\source\repos\ErrandBus\ErrandBus\obj\Debug\netstandard2.0\ErrandBus.AssemblyInfo.cs
