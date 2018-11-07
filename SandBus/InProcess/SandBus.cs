@@ -10,7 +10,6 @@ namespace Ainvar.Bus.InProcess
 
     public class SandBus : ISandBus
     {
-        private static readonly SandBus instance = new SandBus();
         private readonly bool _saveHistory;
         protected ConcurrentDictionary<Guid, Stack<IDispatch>> dispatches = new ConcurrentDictionary<Guid, Stack<IDispatch>>();
         private readonly ConcurrentDictionary<Guid, IDisposable> _subscriptions = new ConcurrentDictionary<Guid, IDisposable>();
@@ -29,13 +28,7 @@ namespace Ainvar.Bus.InProcess
             _saveHistory = saveHistory;
         }
 
-        public static SandBus Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static SandBus Instance { get; } = new SandBus();
 
         public Int64 DispatchesCount
         {
