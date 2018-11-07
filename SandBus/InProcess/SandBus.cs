@@ -10,6 +10,8 @@ namespace Ainvar.Bus.InProcess
 
     public class SandBus : ISandBus
     {
+        private int maxDegreeOfParallelism = 8;
+
         private readonly bool _saveHistory;
         protected ConcurrentDictionary<Guid, Stack<IDispatch>> dispatches = new ConcurrentDictionary<Guid, Stack<IDispatch>>();
         private readonly ConcurrentDictionary<Guid, IDisposable> _subscriptions = new ConcurrentDictionary<Guid, IDisposable>();
@@ -75,7 +77,7 @@ namespace Ainvar.Bus.InProcess
         {
             var handler = new ActionBlock<IDispatch>(
             dispatch => handlerAction(dispatch),
-            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = 2 }
+            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }
             );
 
             var subscription = _broadcast.LinkTo(
@@ -91,7 +93,7 @@ namespace Ainvar.Bus.InProcess
         {
             var handler = new ActionBlock<IDispatch>(
             dispatch => handlerAction(dispatch),
-            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = 2 }
+            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }
             );
 
             var subscription = _broadcast.LinkTo(
@@ -110,7 +112,7 @@ namespace Ainvar.Bus.InProcess
             {
                 var handler = new ActionBlock<IDispatch>(
                 dispatch => behaviours[type](dispatch),
-                new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = 2 }
+                new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }
                 );
 
                 var subscription = _broadcast.LinkTo(
@@ -132,7 +134,7 @@ namespace Ainvar.Bus.InProcess
             {
                 var handler = new ActionBlock<IDispatch>(
                 dispatch => behaviours[guid](dispatch),
-                new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = 2 }
+                new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }
                 );
 
                 var subscription = _broadcast.LinkTo(
@@ -151,7 +153,7 @@ namespace Ainvar.Bus.InProcess
         {
             var handler = new ActionBlock<IDispatch>(
             dispatch => behaviour(dispatch),
-            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = 2 }
+            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }
             );
 
             var subscription = _broadcast.LinkTo(
@@ -168,7 +170,7 @@ namespace Ainvar.Bus.InProcess
         {
             var handler = new ActionBlock<IDispatch>(
             dispatch => behaviour(dispatch),
-            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = 2 }
+            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }
             );
 
             foreach (var guid in guids)
